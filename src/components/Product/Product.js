@@ -4,10 +4,13 @@ import { Card } from 'react-bootstrap';
 // import {Row} from 'react-bootstrap';
 // import {Col} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Product = (props) => {
    // console.log(props);
    const {name, img, donate, email,gender,id,age} = props.product;
+   const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
    return (
 
       <div className='product'>
@@ -20,7 +23,7 @@ const Product = (props) => {
                <Card.Text>Email: {email}</Card.Text>
                <Card.Text>Gender: {gender}</Card.Text>
                <Card.Text>Donate: {donate}</Card.Text>
-               <Button variant="primary" onClick={() => props.handleAddToCart(props.product)} className='btn-regular'>add to cart</Button>
+               <Button variant="primary" onClick={() => props.handleAddToCart(props.product)} className='btn-regular' >{cartIcon}add to cart</Button>
             </Card.Body>
          </Card>
 
